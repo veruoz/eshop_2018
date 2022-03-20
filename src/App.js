@@ -1,11 +1,20 @@
+import {Component} from "react";
+import {connect} from "react-redux";
 
 
-function App() {
-    return (
-        <div className="container">
-            hi
-        </div>
-    );
+class App extends Component {
+    render() {
+        const { books } = this.props.books
+        return (
+            <div className="container">
+                <h1>{books[0].title}</h1>
+            </div>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    ...state
+})
+
+export default connect(mapStateToProps)(App);

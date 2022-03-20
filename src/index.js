@@ -13,8 +13,8 @@ setTimeout(function (){
     store.dispatch({
         type: 'SET_BOOK',
         payload: [{
-            id: 1,
-            title: 'Hello Oruel'
+            id: 0,
+            title: 'Best book'
         }]
     })
 }, 1000)
