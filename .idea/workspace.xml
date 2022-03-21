@@ -27,6 +27,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mikhail Guryanov\Desktop\templates\coding\Archakov Blog\eshop_2018\public" />
+      <recent name="C:\Users\Mikhail Guryanov\Desktop\templates\coding\Archakov Blog\eshop_2018\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
@@ -53,7 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1647761017303</updated>
       <workItem from="1647761019217" duration="825000" />
-      <workItem from="1647778944775" duration="6089000" />
+      <workItem from="1647778944775" duration="13566000" />
+      <workItem from="1647841944055" duration="1861000" />
     </task>
     <servers />
   </component>

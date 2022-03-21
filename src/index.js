@@ -2,22 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Provider} from "react-redux";
-
+import './styles/semantic.css'
 import App from './App';
 
 import createStore from './store'
 const store = createStore()
-
-
-setTimeout(function (){
-    store.dispatch({
-        type: 'SET_BOOK',
-        payload: [{
-            id: 0,
-            title: 'Best book'
-        }]
-    })
-}, 1000)
 
 ReactDOM.render(
     <React.StrictMode>
