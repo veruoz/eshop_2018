@@ -1,14 +1,15 @@
 import {Component} from "react";
-import {connect} from "react-redux";
-import {setBooks} from "./actions/books";
 import axios from "axios";
-import Menu from "./components/Menu";
-import BookCard from "./components/BookCard";
+import Menu from "./Menu";
+import BookCard from "./BookCard";
 import {Card, Container} from 'semantic-ui-react'
-import './App.css'
+import '../App.css'
+import Filter from "../containers/Filter";
 
 
 class App extends Component {
+    // эту часть мы не можем убрать в контейнер, поскольку метод является частью классового компонента.
+    // Но при функциональном подходе это возможно через хуки
     componentWillMount() {
         const { setBooks } = this.props
         axios.get('/books.json').then(({ data }) => {
@@ -17,11 +18,12 @@ class App extends Component {
     }
 
     render() {
-        const { books, isReady } = this.props
+        const { books, isReady, setFilter } = this.props
 
         return (
             <Container>
                 <Menu/>
+                <Filter setFilter={setFilter} />
                 <Card.Group itemsPerRow={4}>
                     {!isReady ? 'Загрузка' : books.map((book, i) => (
                         <BookCard key={i} {...book} />
@@ -33,13 +35,4 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = ({ books }) => ({
-    books:   books.items,
-    isReady: books.isReady
-})
-
-const mapDispatchToProps = dispatch => ({
-    setBooks: books => dispatch(setBooks(books))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
